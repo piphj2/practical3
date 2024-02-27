@@ -8,6 +8,9 @@ namespace UnityStandardAssets.Vehicles.Car
     {
         private CarController m_Car; // the car controller we want to use
 
+        float gravity = 0.0f;
+        float sensitivity = 0.1f;
+
         private void Awake()
         {
             // get the car controller
@@ -17,11 +20,11 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void FixedUpdate()
         {
-            // pass the input to the car!
-            float h = Input.GetAxis("Horizontal");
-            float v = Input.GetAxis("Vertical");
+            //gravityX and gravityY 
+            gravity = ((1.0f - sensitivity) * gravity) + (sensitivity * Input.acceleration.x);
+
             float handbrake = Input.GetAxis("Jump");
-            m_Car.Move(h, v, v, handbrake);
+            m_Car.Move(gravity, -Input.acceleration.y, 0,0);
         }
     }
 }

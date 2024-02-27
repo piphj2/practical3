@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Task 5 - On Rails/Task 5 On Rails.unity
+    guid: 6efc742b4efc84f9da5ffe534402e9c6
+  - enabled: 1
+    path: Assets/practical scene.unity
+    guid: e08aee9e2f5f2496c86b1615813cfbd8
   m_configObjects: {}
